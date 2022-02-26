@@ -31,16 +31,16 @@ def index():
         pred1 = model1.predict([[purchases,suppcard]])
         s1 = "The score of credit card upgrade based on decision tree is " + str(pred1)
         model2 = joblib.load("CCU_Regression")
-        pred2 = model1.predict([[purchases,suppcard]])
+        pred2 = model2.predict([[purchases,suppcard]])
         s2 = "The score of credit card upgrade based on Regression is " + str(pred2)
         model3 = joblib.load("CCU_NN")
-        pred3 = model1.predict([[purchases,suppcard]])
+        pred3 = model3.predict([[purchases,suppcard]])
         s3 = "The score of credit card upgrade based on NN is " + str(pred3)
         model4 = joblib.load("CCU_RandomForest")
-        pred4 = model1.predict([[purchases,suppcard]])
+        pred4 = model4.predict([[purchases,suppcard]])
         s4 = "The score of credit card upgrade based on RF is " + str(pred4)
         model5 = joblib.load("CCU_XGBoost")
-        pred5 = model1.predict([[purchases,suppcard]])
+        pred5 = model5.predict([[purchases,suppcard]])
         s5 = "The score of credit card upgrade based on GB is " + str(pred5)
         return(render_template("index2.html", result1 = s1 , result2 = s2, result3 = s3, result4 = s4, result5 = s5))
     else: 
@@ -53,5 +53,5 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=80)
+    app.run()
 
